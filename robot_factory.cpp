@@ -4,8 +4,9 @@
 #include<algorithm>
 using namespace std;
 int a[1005][1005];
-int visited[1005][1005];
-int x=0;
+int visited[1005][1005];//to check visited nodes
+int x=0;//count of tiles in a room
+//to convert the number into binary string
 string int_to_binary(int b)
 {
     string p="0000";
@@ -26,6 +27,7 @@ string int_to_binary(int b)
     }
     return p;
 }
+//implementing depth first search
 void dfs(int i,int j,int n,int m)
 {
     if(i>=n||j>=m||i<0||j<0||visited[i][j]==1)
@@ -69,6 +71,7 @@ int main()
         }
     }
     cout<<"room size from largest to smallest are:"<<endl;
+    //sorting the elements in the vector using sort function from algorithm header file
     sort(v.begin(),v.end(),greater<int>());
      for (int i=0;i<v.size();i++)
         cout <<v[i]<<" ";
